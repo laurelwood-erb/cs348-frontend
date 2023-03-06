@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Running Frontend Application
 
 1. In the frontend repo,  execute this command to install required node modules
     ```
@@ -14,3 +14,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     ```
 3. The application will automatically run on <a href="http://localhost:3000 ">http://localhost:3000</a>. \
     If not, open a browser of your choice and open connect to above link
+
+> Detailed information regarding to our application can be found at README.md in back-end repo, which is <a href="https://github.com/laurelwood-erb/cs348-backend">here</a>
