@@ -1,5 +1,7 @@
 import { React, useEffect, useState } from "react";
-import { getCountries } from "../api/query";
+// import { getCountries } from "../api/query";
+import axios from "axios";
+
 
 const Form = ({ param1, instruction, submit }) => {
     const [val1, setVal1] = useState(param1);
@@ -36,13 +38,14 @@ const Home = () => {
                 instruction={"See the countries that this airline operates in:"}
                 param1={"Airline (case sensitive)"}
                 submit={async (data) => {
-                    const res = await getCountries(data);
+                    const res = await axios.get(`http://localhost:8080/api/airline-countries/${data}`)
+                    console.log(res)
                     setResult(res ? res: "Error with the entry");
                 }}
             />
             {result ?
                 <div className="query-result">
-                    {result} + countries.
+                    {result.data} countries.
                 </div> : null}
         </div>
     );

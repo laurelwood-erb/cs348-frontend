@@ -1,9 +1,9 @@
-import axios from "axios";
+// import axios from "axios";
 
-const url = "http://localhost:8080/api"
+// const url = "http://localhost:8080/api"
 
-export const getCountries = async (airline) => {
-    return await axios.get(url + `/airline-countries/${airline}`).then((res) =>{
-        console.log(res);
-    });
-}
+// export const getCountries = async (name) => {
+//     return await axios.get(url + `/airline-countries/${name}`).then((res) =>{
+//         console.log(res);
+//     });
+// }
