@@ -37,7 +37,7 @@ const Home = () => {
                 param1={"Airline (case sensitive)"}
                 submit={async (data) => {
                     const res = await getCountries(data);
-                    setResult(res ? res : "placeholder");
+                    setResult(res ? res : "Error with the entry");
                 }}
             />
             {result ?
