@@ -37,15 +37,12 @@ const Home = () => {
                 param1={"Airline (case sensitive)"}
                 submit={async (data) => {
                     const res = await getCountries(data);
-                    setResult(res ? res : "Error with the entry");
+                    setResult(res ? res: "Error with the entry");
                 }}
             />
             {result ?
                 <div className="query-result">
-                    {result.map((tuple) =>
-                        <div className="row">
-                            {tuple}
-                        </div>)}
+                    {result} + countries.
                 </div> : null}
         </div>
     );
