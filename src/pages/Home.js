@@ -1,6 +1,6 @@
 import { React } from "react";
 import { Link } from "react-router-dom";
-import { questions } from "../helpers/Questions";
+import { questions } from "../helpers/questions";
 
 const Home = () => {
   return (

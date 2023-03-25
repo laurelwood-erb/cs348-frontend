@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { questions } from "../helpers/Questions";
+import { questions } from "../helpers/questions";
 import NotFoundPage from "./NotFoundPage";
 
 const ShowQuestion = () => {
@@ -52,7 +52,7 @@ const ShowQuestion = () => {
         </div>
         {numInputs === 2 && (
           <div className="input-container">
-            <label>Enter second airport:&nbsp;</label>
+            <label>Enter destination airport:&nbsp;</label>
             <input type="text" value={input2} onChange={handleInput2Change} />
           </div>
         )}
