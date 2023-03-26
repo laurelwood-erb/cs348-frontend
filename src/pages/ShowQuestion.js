@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import Input from "../components/Input";
 import { questions } from "../helpers/questions";
 import NotFoundPage from "./NotFoundPage";
 
@@ -11,26 +12,18 @@ const ShowQuestion = () => {
 
   const { id } = useParams();
   const qNum = Number(id) - 1;
-  const validId = qNum >= 0 && qNum <= 5;
 
+  const validId = qNum >= 0 && qNum <= 5;
   if (!validId) {
     return <NotFoundPage />;
   }
-
-  const numInputs = qNum === 4 || qNum === 5 ? 2 : 1;
   const api = questions[qNum].api;
 
-  const handleInput1Change = (e) => {
-    setInput1(e.target.value);
-  };
-
-  const handleInput2Change = (e) => {
-    setInput2(e.target.value);
-  };
+  const handleInput1Change = (e, newInput) => setInput1(newInput);
+  const handleInput2Change = (e, newInput) => setInput2(newInput);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const response = await axios.get(api);
       const data = response.data;
@@ -48,12 +41,18 @@ const ShowQuestion = () => {
       <form onSubmit={handleSubmit}>
         <div className="input-container">
           <label>{questions[qNum].instruction}&nbsp;</label>
-          <input type="text" value={input1} onChange={handleInput1Change} />
+          <Input qNum={qNum} input={input1} handleChange={handleInput1Change} />
         </div>
-        {numInputs === 2 && (
+        {(qNum === 4 || qNum === 5) && (
           <div className="input-container">
-            <label>Enter destination airport:&nbsp;</label>
-            <input type="text" value={input2} onChange={handleInput2Change} />
+            <label>
+              Enter destination {qNum === 4 ? "airport" : "country"}:&nbsp;
+            </label>
+            <Input
+              qNum={qNum}
+              input={input2}
+              handleChange={handleInput2Change}
+            />
           </div>
         )}
         <button type="submit">Submit</button>
