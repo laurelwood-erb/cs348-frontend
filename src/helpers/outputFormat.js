@@ -1,3 +1,5 @@
+/** @format */
+
 export default function outputFormat(qNum, data) {
   switch (qNum) {
     case 0:
@@ -11,6 +13,8 @@ export default function outputFormat(qNum, data) {
         "\n" +
         data.map((al, index) => `${index + 1}. ${al["name"]}`).join("\r\n")
       );
+    case 4:
+      return data.map((al) => JSON.stringify(al)).join("\n");
     case 5:
       return data.map((al) => al["name"]).join(", ");
     default:

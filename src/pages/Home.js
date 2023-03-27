@@ -1,6 +1,8 @@
+/** @format */
+
 import { React } from "react";
 import { Link } from "react-router-dom";
-import { questions } from "../helpers/questions";
+import { questions } from "../helpers/Questions";
 
 const Home = () => {
   return (

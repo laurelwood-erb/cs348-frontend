@@ -1,11 +1,13 @@
+/** @format */
+
 import axios from "axios";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import Input from "../components/Input";
 import apiInput from "../helpers/apiInput";
 import outputFormat from "../helpers/outputFormat";
-import { questions } from "../helpers/questions";
 import NotFoundPage from "./NotFoundPage";
+import { questions } from "../helpers/Questions";
 
 const ShowQuestion = () => {
   const [input1, setInput1] = useState("");
