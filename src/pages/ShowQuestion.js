@@ -2,12 +2,15 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import Input from "../components/Input";
+import apiInput from "../helpers/apiInput";
+import outputFormat from "../helpers/outputFormat";
 import { questions } from "../helpers/questions";
 import NotFoundPage from "./NotFoundPage";
 
 const ShowQuestion = () => {
   const [input1, setInput1] = useState("");
   const [input2, setInput2] = useState("");
+  const [pressed, setPressed] = useState(false);
   const [outputValue, setOutputValue] = useState("");
 
   const { id } = useParams();
@@ -24,15 +27,17 @@ const ShowQuestion = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.get(api);
-      const data = response.data;
 
-      setOutputValue(data.result);
+    console.log(api + apiInput(qNum, input1, input2));
+    try {
+      const response = await axios.get(api + apiInput(qNum, input1, input2));
+      const data = response.data;
+      setOutputValue(outputFormat(qNum, data));
     } catch (error) {
       console.error("Error fetching data:", error);
       setOutputValue("Error fetching data");
     }
+    setPressed(true);
   };
 
   return (
@@ -57,8 +62,10 @@ const ShowQuestion = () => {
         )}
         <button type="submit">Submit</button>
       </form>
-      {outputValue === "" ? null : (
-        <div className="query-result">Result: {outputValue}</div>
+      {pressed && (
+        <div className="query-result">
+          {outputValue === "" ? "No result" : "Result: " + outputValue}
+        </div>
       )}
     </div>
   );

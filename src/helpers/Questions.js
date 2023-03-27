@@ -17,7 +17,8 @@ export const questions = [
     api: url + "third",
   },
   {
-    question: "What is the airline that has the most routes in this airport?",
+    question:
+      "What are the top 10 airlines that has the most routes in this airport?",
     instruction: "Enter airport name:",
     api: url + "fourth",
   },
@@ -30,7 +31,7 @@ export const questions = [
   {
     question:
       "Given two airports, origin and departure airports, display airlines that operate on routes chosen by the user where its origin and destination airports match to user input",
-    instruction: "Enter origin airport:",
+    instruction: "Enter origin country:",
     api: url + "sixth",
   },
 ];
