@@ -1,5 +1,10 @@
 import { Autocomplete, TextField } from "@mui/material";
-import { airports, countries, timezones } from "../helpers/dropdowns";
+import {
+  airplanes,
+  airports,
+  countries,
+  timezones,
+} from "../helpers/dropdowns";
 
 export default function Input({ qNum, input, handleChange }) {
   if (typeof input === "number") input = input.toString();
@@ -40,6 +45,19 @@ export default function Input({ qNum, input, handleChange }) {
         sx={{ width: 300 }}
         renderInput={(params) => (
           <TextField {...params} label="Select a country" />
+        )}
+      />
+    );
+  else if (qNum === 6)
+    return (
+      <Autocomplete
+        inputValue={input}
+        onInputChange={handleChange}
+        id="dropdown-airplanes"
+        options={airplanes}
+        sx={{ width: 300 }}
+        renderInput={(params) => (
+          <TextField {...params} label="Select an airplane" />
         )}
       />
     );

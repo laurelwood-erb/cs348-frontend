@@ -6,8 +6,8 @@ import { useParams } from "react-router-dom";
 import Input from "../components/Input";
 import apiInput from "../helpers/apiInput";
 import outputFormat from "../helpers/outputFormat";
-import NotFoundPage from "./NotFoundPage";
 import { questions } from "../helpers/Questions";
+import NotFoundPage from "./NotFoundPage";
 
 const ShowQuestion = () => {
   const [input1, setInput1] = useState("");
@@ -18,7 +18,7 @@ const ShowQuestion = () => {
   const { id } = useParams();
   const qNum = Number(id) - 1;
 
-  const validId = qNum >= 0 && qNum <= 5;
+  const validId = qNum >= 0 && qNum <= 6;
   if (!validId) {
     return <NotFoundPage />;
   }

@@ -31,6 +31,9 @@ const Home = () => {
         <div>
           <Link to="/question/6">{questions[5].question}</Link>
         </div>
+        <div>
+          <Link to="/question/7">{questions[6].question}</Link>
+        </div>
       </div>
     </div>
   );

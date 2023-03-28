@@ -36,4 +36,10 @@ export const questions = [
     instruction: "Enter origin country:",
     api: url + "sixth",
   },
+  {
+    question:
+      "Given an airplane/aircraft, list all the countries where the plane stops",
+    instruction: "Enter airplane name:",
+    api: url + "seventh",
+  },
 ];

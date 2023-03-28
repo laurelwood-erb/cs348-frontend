@@ -2,6 +2,8 @@
 package-lock.json
 .DS_Store
 
+public/data
+
 # Logs
 logs
 *.log

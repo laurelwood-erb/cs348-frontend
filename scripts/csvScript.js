@@ -22,9 +22,10 @@ function writeColumnDataToFile(columnData, outputPath) {
   // console.log(`Column data has been written to: ${outputPath}`);
 }
 
-const fileUrl = "../public/data/airlines.csv";
+const fileUrl =
+  "/Users/pauloh/Documents/University of Waterloo/Term 12 - CS 3B/CS 348/project/cs348-frontend/public/data/airplanes.csv";
 const outputTxtPath = "./output.txt";
-const headerTwo = "Country";
+const headerTwo = "Name";
 
 const columnData = csvScript(fileUrl, headerTwo);
 

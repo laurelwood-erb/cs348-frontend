@@ -17,6 +17,8 @@ export default function outputFormat(qNum, data) {
       return data.map((al) => JSON.stringify(al)).join("\n");
     case 5:
       return data.map((al) => al["name"]).join(", ");
+    case 6:
+      return data.map((al) => al["name"]).join(", ");
     default:
       return "";
   }
