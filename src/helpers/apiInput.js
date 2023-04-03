@@ -1,4 +1,4 @@
-import { airports, timezones } from "./dropdowns";
+import { airplanes, airports, timezones } from "./dropdowns";
 
 export default function apiInput(qNum, input1, input2) {
   const inputVal1 =
@@ -6,6 +6,8 @@ export default function apiInput(qNum, input1, input2) {
       ? timezones.find((tz) => tz.label === input1).value
       : qNum === 1 || qNum === 3 || qNum === 4
       ? airports.find((ap) => ap.label === input1).value
+      : qNum === 6
+      ? airplanes.find((c) => c.label === input1).value
       : input1;
 
   const inputVal2 =

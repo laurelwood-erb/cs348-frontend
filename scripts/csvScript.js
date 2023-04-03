@@ -6,14 +6,13 @@ function csvScript(fileUrl, headerTwo) {
   const headers = lines.shift().split(",");
   const columnTwo = headers.indexOf(headerTwo);
 
-  const columnValues = lines.map((line) => {
+  const columnValues = lines.map((line, index) => {
     const cells = line.split(",");
+    // console.log(cells);
     // console.log(cells[columnOne]);
-    return `"${cells[columnTwo]}",`;
+    return `{value: ${index}, label: "${cells[columnTwo]}"},`;
   });
-  // console.log(columnValues);
-  const refined = [...new Set(columnValues)].sort();
-  return refined;
+  return columnValues;
 }
 
 function writeColumnDataToFile(columnData, outputPath) {

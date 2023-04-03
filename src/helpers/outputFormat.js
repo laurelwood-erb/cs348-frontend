@@ -18,7 +18,7 @@ export default function outputFormat(qNum, data) {
     case 5:
       return data.map((al) => al["name"]).join(", ");
     case 6:
-      return data.map((al) => al["name"]).join(", ");
+      return data.map((al) => al["country"]).join(", ");
     default:
       return "";
   }
