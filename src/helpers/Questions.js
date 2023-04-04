@@ -32,7 +32,7 @@ export const questions = [
   },
   {
     question:
-      "Given two airports, origin and departure airports, display airlines that operate on routes chosen by the user where its origin and destination airports match to user input",
+      "Given origin and departure countries, display airlines that operate on routes chosen by the user where its origin and destination countries match to user input",
     instruction: "Enter origin country:",
     api: url + "sixth",
   },

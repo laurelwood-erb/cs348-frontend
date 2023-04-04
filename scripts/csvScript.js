@@ -10,7 +10,7 @@ function csvScript(fileUrl, headerTwo) {
     const cells = line.split(",");
     // console.log(cells);
     // console.log(cells[columnOne]);
-    return `{value: ${index}, label: "${cells[columnTwo]}"},`;
+    return `{value: ${index + 1}, label: "${cells[columnTwo]}"},`;
   });
   return columnValues;
 }
