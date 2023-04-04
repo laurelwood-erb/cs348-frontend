@@ -14,7 +14,7 @@ export default function outputFormat(qNum, data) {
         data.map((al, index) => `${index + 1}. ${al["name"]}`).join("\r\n")
       );
     case 4:
-      return data.map((al) => JSON.stringify(al)).join("\n");
+      return data.map((al) => JSON.stringify(al, null, 2)).join("\n");
     case 5:
       return data.map((al) => al["name"]).join(", ");
     case 6:
