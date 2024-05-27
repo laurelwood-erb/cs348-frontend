@@ -1,4 +1,4 @@
-# Frontend for CS348 Group Project by Laurelwood-Erb (PG13)
+# Frontend for CS348 Group Project by Laurelwood-Erb (PG13!)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
